@@ -1,0 +1,112 @@
+.content {
+    background-color: #f0f0f0;
+    padding-top: 20px;
+    margin: 50px 15px;
+
+}
+
+.item {
+    border-radius: 20px;
+    width: 100%;
+    min-height: 520px;
+    background-color: white;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.product {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.pic {
+    width: 100%;
+    height: 320px;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pic img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.rating-stars {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+    color: #737373;
+}
+.rating-stars img{
+    width: 100px;
+    height: 20px;
+    object-fit: contain;
+}
+.add-to-cart {
+    margin-top: auto;
+    width: 100%;
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 20px;
+}
+.add-to-cart:hover {
+    cursor: pointer;
+}
+.product-name {
+    line-height: 1.4;
+    min-height: 44px;
+}
+.banner {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    background-color: #f0f0f0;
+    position: relative;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 400ms ease-in-out, transform 400ms ease-in-out;
+}
+
+.banner.is-fading {
+    opacity: 0.25;
+    transform: translateY(4px);
+}
+
+.banner img {
+    object-fit: contain;
+    width: 100%;
+}
+.line {
+    position: absolute;
+    bottom: -10px;
+    background-color: #f0f0f0;
+    padding: 15px;
+}
+.chat {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    height: 80px;
+    width: 80px;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-radius: 50%;
+    background-color: transparent;
+}
+.fa-message {
+    font-size: 2rem;
+}
