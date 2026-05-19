@@ -1,0 +1,8 @@
+{
+  "BaseURL": {
+    "value": "http://localhost:3000",
+    "type": "string",
+    "id": "10e4b00b-1ad8-4913-8d57-43432ad58501",
+    "isSecret": false
+  }
+}

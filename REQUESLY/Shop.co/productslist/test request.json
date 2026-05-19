@@ -1,0 +1,20 @@
+{
+  "name": "test request",
+  "rank": "auntit17724735659311",
+  "request": {
+    "type": "http",
+    "url": "{{BaseURL}}/user/signUp",
+    "scripts": {
+      "preRequest": "",
+      "postResponse": ""
+    },
+    "method": "GET",
+    "queryParams": [],
+    "headers": [],
+    "contentType": "text/plain",
+    "auth": {
+      "currentAuthType": "INHERIT",
+      "authConfigStore": {}
+    }
+  }
+}

@@ -1,6 +1,20 @@
 import { products } from "./products.js";
 import { cart } from "./cart.js";
+
+async function login() {
+    const response = await fetch("", {
+        method: "POST",
+        headers: {  "Content-Type": "application/json" },
+        body: JSON.stringify({ username: "user", password: "pass" }),
+    }); 
+}
+
 let html = "";
+
+const storedCart = JSON.parse(localStorage.getItem("shopco-cart") || "[]");
+if (Array.isArray(storedCart) && storedCart.length > 0) {
+    cart.push(...storedCart);
+}
 
 products.forEach((product) => {
     const ratingImage = `images/ratings/rating-${Math.round(product.rating.stars * 10)}.png`;
@@ -16,20 +30,31 @@ products.forEach((product) => {
 
 document.querySelector(".product").innerHTML = html;
 
-let count = 0;
+function getCartQuantity() {
+    return cart.reduce((total, item) => total + item.quantity, 0);
+}
+
+function syncCart() {
+    localStorage.setItem("shopco-cart", JSON.stringify(cart));
+    const cartIcon = document.querySelector(".js-fa-solid");
+    if (cartIcon) {
+        const quantity = getCartQuantity();
+        cartIcon.innerHTML = quantity > 0 ? quantity : "";
+    }
+}
+
+syncCart();
 
 document.querySelectorAll(".js-add-to-cart").forEach((button) => {
     button.addEventListener("click", () => {
         let productId = button.dataset.id;
 
         let exists = false;
-        let cartQuantity = 0;
         cart.forEach((item) => {
             if (item.productId === productId) {
                 item.quantity += 1;
                 exists = true;
             }
-            cartQuantity += item.quantity;
         });
 
         if (!exists) {
@@ -38,9 +63,7 @@ document.querySelectorAll(".js-add-to-cart").forEach((button) => {
                 quantity: 1
             });
         }
-        console.log(cart)
-        console.log(cartQuantity)
-        document.querySelector(".js-fa-solid").innerHTML = cartQuantity;
+        syncCart();
     });
 })
 
@@ -95,4 +118,36 @@ document.querySelector(".js-bar").addEventListener("click", () => {
     menuButton.innerHTML = isActive
         ? `<i class="fa-solid fa-x"></i>`
         : `<i class="fa-solid fa-bars"></i>`;
-})
+});
+
+const cartButton = document.querySelector(".js-cart");
+if (cartButton) {
+    cartButton.addEventListener("click", () => {
+        window.location.href = "./html/checkout.html";
+    });
+}
+
+const chatToggleButton = document.querySelector(".js-chat-toggle");
+const chatPanel = document.querySelector(".js-chat-panel");
+const chatCloseButton = document.querySelector(".js-chat-close");
+
+if (chatToggleButton && chatPanel) {
+    chatToggleButton.addEventListener("click", () => {
+        const isOpen = chatPanel.classList.toggle("open");
+        chatPanel.setAttribute("aria-hidden", String(!isOpen));
+    });
+}
+
+if (chatCloseButton && chatPanel) {
+    chatCloseButton.addEventListener("click", () => {
+        chatPanel.classList.remove("open");
+        chatPanel.setAttribute("aria-hidden", "true");
+    });
+}
+
+const chatInputForm = document.querySelector(".chat-input-row");
+if (chatInputForm) {
+    chatInputForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+    });
+}

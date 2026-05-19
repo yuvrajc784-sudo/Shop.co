@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Checkout | Shop.Co</title>
+	<link rel="stylesheet" href="../style/checkout.css">
+</head>
+
+<body>
+	<header class="checkout-header">
+		<a class="back-link" href="../index.html">&larr; Continue Shopping</a>
+		<h1>Checkout</h1>
+	</header>
+
+	<main class="checkout-main">
+		<section class="checkout-items">
+			<h2>Your Items</h2>
+			<div class="items-list js-checkout-items"></div>
+		</section>
+
+		<aside class="checkout-summary">
+			<h2>Order Summary</h2>
+			<div class="summary-row">
+				<span>Items</span>
+				<span class="js-summary-items">0</span>
+			</div>
+			<div class="summary-row">
+				<span>Subtotal</span>
+				<span class="js-summary-subtotal">$0.00</span>
+			</div>
+			<div class="summary-row total">
+				<span>Total</span>
+				<span class="js-summary-total">$0.00</span>
+			</div>
+			<button class="place-order" type="button">Place Order</button>
+		</aside>
+	</main>
+
+	<script type="module" src="../script/checkout.js"></script>
+</body>
+
+</html>

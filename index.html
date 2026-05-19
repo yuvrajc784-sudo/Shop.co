@@ -39,7 +39,7 @@
             </div>
 
             <div class="login">
-                <i class="fa-solid js-fa-solid fa-cart-arrow-down cart"></i>
+                <i class="fa-solid js-fa-solid fa-cart-arrow-down cart js-cart"></i>
                 <i class="fa-regular fa-user user"></i>
             </div>
         </div>
@@ -70,7 +70,28 @@
         <div class="product">
         </div>
     </div>
-<div class="chat"><i class="fa-solid fa-message"></i>Chat</div>
+    <button class="chat js-chat-toggle" type="button" aria-label="Open chat">
+        <i class="fa-solid fa-message"></i>
+        <span>Chat</span>
+    </button>
+
+    <div class="chat-panel js-chat-panel" aria-hidden="true">
+        <div class="chat-header">
+            <h3>Live Chat</h3>
+            <button class="chat-close js-chat-close" type="button" aria-label="Close chat">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="chat-body">
+            <div class="chat-message support">Hi! How can we help you today?</div>
+            <div class="chat-message user">I need help with my order.</div>
+            <div class="chat-message support">You can check your cart and continue on checkout.</div>
+        </div>
+        <form class="chat-input-row" action="#" method="get">
+            <input class="chat-input" type="text" placeholder="Type your message..." aria-label="Type your message">
+            <button class="chat-send" type="submit">Send</button>
+        </form>
+    </div>
 
     <div class="footer">
         <div class="section">
