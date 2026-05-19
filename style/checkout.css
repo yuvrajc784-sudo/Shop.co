@@ -81,6 +81,50 @@ body {
     font-size: 0.92rem;
 }
 
+.item-quantity-controls {
+    margin-bottom: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #d9d9d9;
+    border-radius: 999px;
+    padding: 4px;
+}
+
+.quantity-btn {
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    background-color: #f2f2f2;
+    color: #1d1d1d;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.quantity-btn:hover {
+    background-color: #e5e5e5;
+}
+
+.item-qty-value {
+    min-width: 20px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.delete-btn {
+    border: none;
+    background: none;
+    color: #c62828;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+}
+
+.delete-btn:hover {
+    text-decoration: underline;
+}
+
 .item-price {
     font-weight: 700;
 }

@@ -11,10 +11,8 @@ async function login() {
 
 let html = "";
 
-const storedCart = JSON.parse(localStorage.getItem("shopco-cart") || "[]");
-if (Array.isArray(storedCart) && storedCart.length > 0) {
-    cart.push(...storedCart);
-}
+cart.length = 0;
+localStorage.setItem("shopco-cart", "[]");
 
 products.forEach((product) => {
     const ratingImage = `images/ratings/rating-${Math.round(product.rating.stars * 10)}.png`;
@@ -124,6 +122,13 @@ const cartButton = document.querySelector(".js-cart");
 if (cartButton) {
     cartButton.addEventListener("click", () => {
         window.location.href = "./html/checkout.html";
+    });
+}
+
+const userButton = document.querySelector(".user");
+if (userButton) {
+    userButton.addEventListener("click", () => {
+        window.location.href = "./html/auth.html";
     });
 }
 

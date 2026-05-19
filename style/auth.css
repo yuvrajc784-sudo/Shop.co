@@ -1,0 +1,141 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    color: #1c1c1c;
+}
+
+.auth-header {
+    background-color: white;
+    border-bottom: 1px solid #dedede;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    text-decoration: none;
+    color: black;
+    font-size: 1.9rem;
+    font-weight: 900;
+}
+
+.auth-page {
+    margin: 28px auto;
+    width: min(520px, 95%);
+}
+
+.auth-card {
+    border-radius: 14px;
+    background-color: #fff;
+    border: 1px solid #dedede;
+}
+
+.auth-card {
+    padding: 20px;
+}
+
+.auth-tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    padding: 4px;
+    margin-bottom: 16px;
+}
+
+.auth-tab {
+    border: none;
+    border-radius: 8px;
+    background-color: transparent;
+    color: #5f5f5f;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.auth-tab.active {
+    background-color: #fff;
+    color: #141414;
+}
+
+.auth-feedback {
+    min-height: 22px;
+    margin-bottom: 8px;
+    font-size: 0.93rem;
+    font-weight: 700;
+}
+
+.auth-feedback.error {
+    color: #bf2b2b;
+}
+
+.auth-feedback.success {
+    color: #1f7c3d;
+}
+
+.auth-form {
+    display: none;
+    grid-template-columns: 1fr;
+    gap: 8px;
+}
+
+.auth-form.active {
+    display: grid;
+}
+
+label {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: #4e4e4e;
+    font-weight: 700;
+}
+
+input {
+    height: 44px;
+    border-radius: 10px;
+    border: 1px solid #d3d3d3;
+    outline: none;
+    padding: 0 12px;
+    font-size: 1rem;
+    background-color: #fff;
+}
+
+input:focus {
+    border-color: #8e8e8e;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.09);
+}
+
+.submit-btn {
+    margin-top: 12px;
+    border: none;
+    border-radius: 10px;
+    background-color: black;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 800;
+    height: 46px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #202020;
+}
+
+@media (max-width: 900px) {
+    .auth-header {
+        padding: 14px 16px;
+    }
+
+    .brand {
+        font-size: 1.5rem;
+    }
+}

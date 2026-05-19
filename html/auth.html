@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Sign Up | Shop.Co</title>
+    <link rel="stylesheet" href="../style/auth.css">
+</head>
+
+<body>
+    <header class="auth-header">
+        <a class="brand" href="../index.html">SHOP.CO</a>
+    </header>
+
+    <main class="auth-page">
+        <section class="auth-card" aria-label="Authentication form">
+            <div class="auth-tabs" role="tablist" aria-label="Authentication tabs">
+                <button class="auth-tab active" type="button" role="tab" aria-selected="true" data-panel="login-panel">Login</button>
+                <button class="auth-tab" type="button" role="tab" aria-selected="false" data-panel="signup-panel">Sign Up</button>
+            </div>
+
+            <div class="auth-feedback js-auth-feedback" aria-live="polite"></div>
+
+            <form class="auth-form active js-login-form" id="login-panel" autocomplete="on">
+                <label for="login-email">Email</label>
+                <input id="login-email" name="email" type="email" required placeholder="you@example.com">
+
+                <label for="login-password">Password</label>
+                <input id="login-password" name="password" type="password" required minlength="6" placeholder="Enter your password">
+
+                <button class="submit-btn" type="submit">Login</button>
+            </form>
+
+            <form class="auth-form js-signup-form" id="signup-panel" autocomplete="on">
+                <label for="signup-name">Full Name</label>
+                <input id="signup-name" name="name" type="text" required minlength="2" placeholder="Your full name">
+
+                <label for="signup-email">Email</label>
+                <input id="signup-email" name="email" type="email" required placeholder="you@example.com">
+
+                <label for="signup-password">Password</label>
+                <input id="signup-password" name="password" type="password" required minlength="6" placeholder="At least 6 characters">
+
+                <label for="signup-confirm">Confirm Password</label>
+                <input id="signup-confirm" name="confirmPassword" type="password" required minlength="6" placeholder="Re-enter password">
+
+                <button class="submit-btn" type="submit">Create Account</button>
+            </form>
+        </section>
+    </main>
+
+    <script type="module" src="../script/auth.js"></script>
+</body>
+
+</html>
