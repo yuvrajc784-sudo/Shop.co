@@ -81,14 +81,22 @@
     <div class="chat-panel js-chat-panel" aria-hidden="true">
         <div class="chat-header">
             <h3>Live Chat</h3>
-            <button class="chat-close js-chat-close" type="button" aria-label="Close chat">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
+            <div class="chat-header-actions">
+                <button class="chat-clear js-chat-clear" type="button" aria-label="Clear chat">
+                    <i class="fa-solid fa-broom"></i>
+                </button>
+                <button class="chat-close js-chat-close" type="button" aria-label="Close chat">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
         </div>
         <div class="chat-body">
             <div class="chat-message support">Hi! How can we help you today?</div>
-            <div class="chat-message user">I need help with my order.</div>
-            <div class="chat-message support">You can check your cart and continue on checkout.</div>
+            <div class="chat-suggestions">
+                <button class="chat-suggestion js-chat-suggestion" type="button" data-question="Track my order">Track my order</button>
+                <button class="chat-suggestion js-chat-suggestion" type="button" data-question="Do you have discounts?">Discounts</button>
+                <button class="chat-suggestion js-chat-suggestion" type="button" data-question="How do I return an item?">Returns</button>
+            </div>
         </div>
         <form class="chat-input-row" action="#" method="get">
             <input class="chat-input" type="text" placeholder="Type your message..." aria-label="Type your message">
